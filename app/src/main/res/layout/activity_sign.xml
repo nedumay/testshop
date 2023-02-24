@@ -11,7 +11,6 @@
         style="@style/text_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="@string/sign_in"
         app:layout_constraintBottom_toTopOf="@+id/til_first_name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +27,8 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="48dp"
+        app:errorEnabled="true"
+        app:errorTextColor="@android:color/holo_red_light"
         app:layout_constraintBottom_toTopOf="@+id/til_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -47,7 +48,9 @@
         style="@style/text_input_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
+        app:errorEnabled="true"
+        app:errorTextColor="@android:color/holo_red_light"
         app:layout_constraintBottom_toTopOf="@+id/til_email"
         app:layout_constraintEnd_toEndOf="@+id/til_first_name"
         app:layout_constraintHorizontal_bias="0.5"
@@ -67,7 +70,7 @@
         style="@style/text_input_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         app:errorEnabled="true"
         app:errorTextColor="@android:color/holo_red_light"
         app:layout_constraintBottom_toTopOf="@+id/buttonSignIn"
@@ -153,7 +156,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:padding="8dp"
             android:text="@string/sign_in_with_google" />
     </LinearLayout>
@@ -184,7 +187,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
             android:padding="8dp"
             android:text="@string/sign_in_with_apple" />
     </LinearLayout>
