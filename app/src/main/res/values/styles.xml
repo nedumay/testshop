@@ -9,13 +9,21 @@
     </style>
 
     <!-- Style Button-->
-    <style name="style_button">
+    <style name="style_button" parent="Widget.Material3.Button">
         <item name="android:textColor">@color/white</item>
         <item name="android:background">@drawable/button</item>
         <item name="fontFamily">@font/montserrat_bold</item>
         <item name="textAllCaps">false</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+    <!-- Style Button Upload-->
+    <style name="style_button_upload" parent="style_button">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="icon">@drawable/upload_ic</item>
+        <item name="iconGravity">textStart</item>
+    </style>
+
 
     <!-- Style input layout-->
     <style name="text_input_layout">
@@ -74,6 +82,14 @@
         <item name="android:textColor">@color/black</item>
         <item name="fontFamily">@font/montserrat_medium</item>
         <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- Style text profile item -->
+    <style name="text_item_profile" parent="sign_in_with">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:gravity">center_vertical</item>
     </style>
 

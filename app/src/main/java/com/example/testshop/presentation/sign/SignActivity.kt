@@ -1,5 +1,7 @@
 package com.example.testshop.presentation.sign
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -43,5 +45,9 @@ class SignActivity : AppCompatActivity() {
     companion object{
         private const val EMPTY_FIELD = ""
         private const val INVALID_ADDRESS = "Invalid Email address"
+
+        fun newIntent(context: Context): Intent {
+            return Intent(context, SignActivity::class.java)
+        }
     }
 }

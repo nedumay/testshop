@@ -149,12 +149,12 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:src="@drawable/google_ic"
-            android:text="@string/already_have_an_account" />
+            />
 
         <TextView
             android:id="@+id/textViewSignGoogle"
             style="@style/sign_in_with"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
@@ -180,7 +180,7 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:src="@drawable/apple_ic"
-            android:text="@string/already_have_an_account" />
+           />
 
         <TextView
             android:id="@+id/textViewSignApple"

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.testshop.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -37,7 +38,6 @@ class LikeFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_like, container, false)
     }
-
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -57,4 +57,5 @@ class LikeFragment : Fragment() {
                 }
             }
     }
+
 }

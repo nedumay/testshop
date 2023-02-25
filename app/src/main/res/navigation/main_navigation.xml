@@ -33,6 +33,18 @@
         android:id="@+id/profileFragment"
         android:name="com.example.testshop.presentation.main.profile.ProfileFragment"
         android:label="@string/profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_signActivity"
+            app:destination="@id/signActivity" />
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/signActivity"
+        android:name="com.example.testshop.presentation.sign.SignActivity"
+        android:label="activity_sign"
+        tools:layout="@layout/activity_sign" />
 
 </navigation>

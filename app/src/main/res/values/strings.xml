@@ -17,4 +17,10 @@
     <string name="message">Message</string>
     <string name="profile">Profile</string>
     <string name="login">Login</string>
+    <string name="change_photo">Change photo</string>
+    <string name="trade_store">Trade store</string>
+    <string name="payment_method">Payment method</string>
+    <string name="balance">Balance</string>
+    <string name="trade_history">Trade history</string>
+    <string name="log_out">Log out</string>
 </resources>

@@ -29,9 +29,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object{
-
         fun newIntent(context: Context): Intent {
             return Intent(context, MainActivity::class.java)
         }
     }
+
 }
