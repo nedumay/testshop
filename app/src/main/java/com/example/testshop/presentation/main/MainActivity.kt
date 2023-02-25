@@ -4,8 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.testshop.R
 import com.example.testshop.databinding.ActivityMainBinding
@@ -20,6 +19,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        createNavBottom()
+    }
+
+    private fun createNavBottom() {
+        val host = supportFragmentManager.findFragmentById(R.id.main_container) as NavHostFragment
+        val navController = host.navController
+        binding.bottomNavigation.setupWithNavController(navController)
     }
 
     companion object{
