@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.testshop.presentation.main.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/likeFragment"
+        android:name="com.example.testshop.presentation.main.like.LikeFragment"
+        android:label="@string/like"
+        tools:layout="@layout/fragment_like" />
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.testshop.presentation.main.shop.ShopFragment"
+        android:label="@string/shop"
+        tools:layout="@layout/fragment_shop" />
+
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.example.testshop.presentation.main.message.MessageFragment"
+        android:label="@string/message"
+        tools:layout="@layout/fragment_message" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.testshop.presentation.main.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

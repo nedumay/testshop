@@ -77,5 +77,13 @@
         <item name="android:gravity">center_vertical</item>
     </style>
 
+    <!-- Style bottom navigation bar -->
+    <style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorSecondaryContainer">#EEEFF4</item>
+    </style>
 
 </resources>

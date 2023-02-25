@@ -1,13 +1,11 @@
-package com.example.testshop.ui.sign
+package com.example.testshop.presentation.sign
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.EditText
-import com.example.testshop.R
 import com.example.testshop.databinding.ActivitySignBinding
-import com.example.testshop.ui.login.LoginActivity
+import com.example.testshop.presentation.login.LoginActivity
 
 class SignActivity : AppCompatActivity() {
 
