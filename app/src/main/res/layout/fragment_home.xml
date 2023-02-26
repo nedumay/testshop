@@ -7,10 +7,252 @@
     android:background="@color/background_activity"
     tools:context=".presentation.main.home.HomeFragment">
 
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="HOME"
-        android:textSize="24sp" />
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_activity">
+
+            <ImageView
+                android:id="@+id/imageViewMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/nav_menu_ic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewTradeBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/trade_by_bata"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewMenu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageViewMenu" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_marginEnd="32dp"
+                android:elevation="4dp"
+                app:cardCornerRadius="60dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewTradeBy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewTradeBy"
+                app:strokeColor="@color/icon_tint"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:id="@+id/imageViewAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avatar" />
+            </androidx.cardview.widget.CardView>
+
+            <Spinner
+                android:id="@+id/choice_locatin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/cardView"
+                app:layout_constraintStart_toStartOf="@+id/cardView"
+                app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_activity">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_find"
+                style="@style/text_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="64dp"
+                app:endIconDrawable="@drawable/search_find"
+                app:endIconMode="custom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextFind"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:hint="@string/what_are_you_looking_for"
+                    android:textSize="11sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/til_find">
+
+                <CheckBox
+                    android:id="@+id/btnCheckPhones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/check_phones"
+                    android:button="@null"
+                    android:ellipsize="end"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="@string/phones"
+                    android:textColor="@color/selector_text"
+                    android:textSize="8sp"
+                    android:fontFamily="@font/poppins"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnCheckHeadphones"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/btnCheckHeadphones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/check_headphones"
+                    android:button="@null"
+                    android:ellipsize="end"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="@string/headphones"
+                    android:textColor="@color/selector_text"
+                    android:textSize="8sp"
+                    android:fontFamily="@font/poppins"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnCheckPhones"
+                    app:layout_constraintEnd_toStartOf="@+id/btnCheckGames"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnCheckPhones"
+                    app:layout_constraintTop_toTopOf="@+id/btnCheckPhones" />
+
+                <CheckBox
+                    android:id="@+id/btnCheckGames"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/check_games"
+                    android:button="@null"
+                    android:ellipsize="end"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="@string/games"
+                    android:textColor="@color/selector_text"
+                    android:textSize="8sp"
+                    android:fontFamily="@font/poppins"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnCheckHeadphones"
+                    app:layout_constraintEnd_toStartOf="@+id/btnCheckCars"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnCheckHeadphones"
+                    app:layout_constraintTop_toTopOf="@+id/btnCheckHeadphones" />
+
+                <CheckBox
+                    android:id="@+id/btnCheckCars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/check_cars"
+                    android:button="@null"
+                    android:ellipsize="end"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="@string/cars"
+                    android:textColor="@color/selector_text"
+                    android:textSize="8sp"
+                    android:fontFamily="@font/poppins"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnCheckGames"
+                    app:layout_constraintEnd_toStartOf="@+id/btnCheckFurniture"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnCheckGames"
+                    app:layout_constraintTop_toTopOf="@+id/btnCheckGames" />
+
+                <CheckBox
+                    android:id="@+id/btnCheckFurniture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/check_furniture"
+                    android:button="@null"
+                    android:ellipsize="end"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="@string/furniture"
+                    android:textColor="@color/selector_text"
+                    android:textSize="8sp"
+                    android:fontFamily="@font/poppins"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnCheckCars"
+                    app:layout_constraintEnd_toStartOf="@+id/btnCheckKids"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnCheckCars"
+                    app:layout_constraintTop_toTopOf="@+id/btnCheckCars" />
+
+                <CheckBox
+                    android:id="@+id/btnCheckKids"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/check_kids"
+                    android:button="@null"
+                    android:ellipsize="end"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="@string/kids"
+                    android:textColor="@color/selector_text"
+                    android:textSize="8sp"
+                    android:fontFamily="@font/poppins"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnCheckFurniture"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btnCheckFurniture"
+                    app:layout_constraintTop_toTopOf="@+id/btnCheckFurniture" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

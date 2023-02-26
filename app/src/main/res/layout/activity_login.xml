@@ -65,6 +65,4 @@
         app:layout_constraintEnd_toEndOf="@+id/til_password"
         app:layout_constraintStart_toStartOf="@+id/til_password" />
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

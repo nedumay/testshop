@@ -26,7 +26,7 @@
 
 
     <!-- Style input layout-->
-    <style name="text_input_layout">
+    <style name="text_input_layout" parent="Widget.Material3.TextInputLayout.FilledBox">
         <item name="android:textColorHint">@color/text_color_hint</item>
         <item name="boxBackgroundColor">@color/background_card_view</item>
         <item name="boxCornerRadiusBottomEnd">15dp</item>
@@ -44,12 +44,12 @@
     </style>
 
     <!-- Style input edit text-->
-    <style name="input_edit_text">
+    <style name="input_edit_text" parent="ThemeOverlay.Material3.TextInputEditText">
         <item name="android:textColor">@color/text_color</item>
         <item name="fontFamily">@font/montserrat_medium</item>
         <item name="android:textSize">11sp</item>
         <item name="android:inputType">textCapWords</item>
-        <item name="android:gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
     </style>
 
     <!-- Style input edit text password-->

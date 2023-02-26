@@ -23,4 +23,12 @@
     <string name="balance">Balance</string>
     <string name="trade_history">Trade history</string>
     <string name="log_out">Log out</string>
+    <string name="trade_by_bata">Trade by bata</string>
+    <string name="what_are_you_looking_for">What are you looking for ?</string>
+    <string name="phones">Phones</string>
+    <string name="headphones">Headphones</string>
+    <string name="games">Games</string>
+    <string name="cars">Cars</string>
+    <string name="furniture">Furniture</string>
+    <string name="kids">Kids</string>
 </resources>
