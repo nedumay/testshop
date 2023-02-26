@@ -43,36 +43,42 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageViewMenu" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
-                android:layout_width="31dp"
-                android:layout_height="31dp"
-                android:layout_marginEnd="32dp"
-                android:elevation="4dp"
-                app:cardCornerRadius="60dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewTradeBy"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textViewTradeBy"
-                app:strokeColor="@color/icon_tint"
-                app:strokeWidth="1dp">
-
-                <ImageView
-                    android:id="@+id/imageViewAvatar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/avatar" />
-            </androidx.cardview.widget.CardView>
-
-            <Spinner
-                android:id="@+id/choice_locatin"
+            <ImageView
+                android:id="@+id/imageViewAvatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/cardView"
-                app:layout_constraintStart_toStartOf="@+id/cardView"
-                app:layout_constraintTop_toBottomOf="@+id/cardView" />
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewTradeBy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewTradeBy" />
+
+            <TextView
+                android:id="@+id/textViewLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="Location"
+                android:textColor="@color/text_color_signature"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewAvatar"
+                app:layout_constraintStart_toStartOf="@+id/imageViewAvatar"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/down_ic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewLocation"
+                app:layout_constraintTop_toTopOf="@+id/textViewLocation" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -112,6 +118,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -128,13 +135,13 @@
                     android:background="@drawable/check_phones"
                     android:button="@null"
                     android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
                     android:gravity="bottom|center_horizontal"
                     android:maxLines="2"
                     android:minLines="2"
                     android:text="@string/phones"
                     android:textColor="@color/selector_text"
                     android:textSize="8sp"
-                    android:fontFamily="@font/poppins"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/btnCheckHeadphones"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -149,13 +156,13 @@
                     android:background="@drawable/check_headphones"
                     android:button="@null"
                     android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
                     android:gravity="bottom|center_horizontal"
                     android:maxLines="2"
                     android:minLines="2"
                     android:text="@string/headphones"
                     android:textColor="@color/selector_text"
                     android:textSize="8sp"
-                    android:fontFamily="@font/poppins"
                     app:layout_constraintBottom_toBottomOf="@+id/btnCheckPhones"
                     app:layout_constraintEnd_toStartOf="@+id/btnCheckGames"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -170,13 +177,13 @@
                     android:background="@drawable/check_games"
                     android:button="@null"
                     android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
                     android:gravity="bottom|center_horizontal"
                     android:maxLines="2"
                     android:minLines="2"
                     android:text="@string/games"
                     android:textColor="@color/selector_text"
                     android:textSize="8sp"
-                    android:fontFamily="@font/poppins"
                     app:layout_constraintBottom_toBottomOf="@+id/btnCheckHeadphones"
                     app:layout_constraintEnd_toStartOf="@+id/btnCheckCars"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -191,13 +198,13 @@
                     android:background="@drawable/check_cars"
                     android:button="@null"
                     android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
                     android:gravity="bottom|center_horizontal"
                     android:maxLines="2"
                     android:minLines="2"
                     android:text="@string/cars"
                     android:textColor="@color/selector_text"
                     android:textSize="8sp"
-                    android:fontFamily="@font/poppins"
                     app:layout_constraintBottom_toBottomOf="@+id/btnCheckGames"
                     app:layout_constraintEnd_toStartOf="@+id/btnCheckFurniture"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -212,13 +219,13 @@
                     android:background="@drawable/check_furniture"
                     android:button="@null"
                     android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
                     android:gravity="bottom|center_horizontal"
                     android:maxLines="2"
                     android:minLines="2"
                     android:text="@string/furniture"
                     android:textColor="@color/selector_text"
                     android:textSize="8sp"
-                    android:fontFamily="@font/poppins"
                     app:layout_constraintBottom_toBottomOf="@+id/btnCheckCars"
                     app:layout_constraintEnd_toStartOf="@+id/btnCheckKids"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -233,13 +240,13 @@
                     android:background="@drawable/check_kids"
                     android:button="@null"
                     android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
                     android:gravity="bottom|center_horizontal"
                     android:maxLines="2"
                     android:minLines="2"
                     android:text="@string/kids"
                     android:textColor="@color/selector_text"
                     android:textSize="8sp"
-                    android:fontFamily="@font/poppins"
                     app:layout_constraintBottom_toBottomOf="@+id/btnCheckFurniture"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -249,6 +256,79 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <TextView
+                android:id="@+id/textViewLatest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/latest"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+            <TextView
+                android:id="@+id/textViewAllLatest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/view_all"
+                android:textColor="@color/text_color_signature"
+                android:textSize="9sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewLatest"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewLatest" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewLatest"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLatest"
+                tools:listitem="@layout/item_latest" />
+
+            <TextView
+                android:id="@+id/textViewFlash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/flash_sale"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewLatest" />
+
+            <TextView
+                android:id="@+id/textViewAllFlash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/view_all"
+                android:textColor="@color/text_color_signature"
+                android:textSize="9sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewFlash"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewFlash" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewFlashSale"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFlash"
+                tools:listitem="@layout/item_flash_sale" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
