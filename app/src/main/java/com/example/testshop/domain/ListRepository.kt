@@ -1,15 +1,15 @@
 package com.example.testshop.domain
 
 import androidx.lifecycle.LiveData
-import com.example.testshop.domain.model.flashSale.FlashSaleDto
-import com.example.testshop.domain.model.latest.LatestListDto
+import com.example.testshop.domain.model.flashSale.FlashSale
+import com.example.testshop.domain.model.latest.Latest
 
 interface ListRepository {
 
-    fun getFlashSaleList() : LiveData<List<FlashSaleDto>>
+    fun getFlashSaleList() : LiveData<List<FlashSale>>
 
-    fun getLatestList() : LiveData<List<LatestListDto>>
+    fun getLatestList() : LiveData<List<Latest>>
 
-    fun loadData()
+    suspend fun loadData()
 
 }

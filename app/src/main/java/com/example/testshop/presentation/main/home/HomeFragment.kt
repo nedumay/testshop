@@ -4,23 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.example.testshop.R
 import com.example.testshop.databinding.FragmentHomeBinding
+import com.example.testshop.presentation.main.home.adapters.latest.LatestAdapter
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding: FragmentHomeBinding
-    get() = _binding ?: throw RuntimeException("FragmentHomeBinding = null")
+        get() = _binding ?: throw RuntimeException("FragmentHomeBinding = null")
+
+    private lateinit var latestAdapter: LatestAdapter
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater,container,false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,11 +28,14 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnCheckPhones.isChecked = true
         checkBox()
+        latestAdapter = LatestAdapter()
+        binding.recyclerViewLatest.adapter = latestAdapter
+
     }
 
     private fun checkBox() {
-        binding.btnCheckPhones.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked){
+        binding.btnCheckPhones.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
                 binding.btnCheckPhones.isChecked = true
                 binding.btnCheckCars.isChecked = false
                 binding.btnCheckFurniture.isChecked = false
@@ -43,8 +46,8 @@ class HomeFragment : Fragment() {
                 binding.btnCheckPhones.isChecked = false
             }
         }
-        binding.btnCheckCars.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked){
+        binding.btnCheckCars.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
                 binding.btnCheckPhones.isChecked = false
                 binding.btnCheckCars.isChecked = true
                 binding.btnCheckFurniture.isChecked = false
@@ -55,8 +58,8 @@ class HomeFragment : Fragment() {
                 binding.btnCheckCars.isChecked = false
             }
         }
-        binding.btnCheckFurniture.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked){
+        binding.btnCheckFurniture.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
                 binding.btnCheckPhones.isChecked = false
                 binding.btnCheckCars.isChecked = false
                 binding.btnCheckFurniture.isChecked = true
@@ -67,8 +70,8 @@ class HomeFragment : Fragment() {
                 binding.btnCheckFurniture.isChecked = false
             }
         }
-        binding.btnCheckGames.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked){
+        binding.btnCheckGames.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
                 binding.btnCheckPhones.isChecked = false
                 binding.btnCheckCars.isChecked = false
                 binding.btnCheckFurniture.isChecked = false
@@ -79,8 +82,8 @@ class HomeFragment : Fragment() {
                 binding.btnCheckGames.isChecked = false
             }
         }
-        binding.btnCheckKids.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked){
+        binding.btnCheckKids.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
                 binding.btnCheckPhones.isChecked = false
                 binding.btnCheckCars.isChecked = false
                 binding.btnCheckFurniture.isChecked = false
@@ -91,8 +94,8 @@ class HomeFragment : Fragment() {
                 binding.btnCheckKids.isChecked = false
             }
         }
-        binding.btnCheckHeadphones.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked){
+        binding.btnCheckHeadphones.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
                 binding.btnCheckPhones.isChecked = false
                 binding.btnCheckCars.isChecked = false
                 binding.btnCheckFurniture.isChecked = false

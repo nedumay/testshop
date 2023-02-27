@@ -15,6 +15,12 @@
         android:layout_height="match_parent"
         tools:background="@color/black">
 
+        <ImageView
+            android:id="@+id/imageViewUrl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
         <TextView
             android:id="@+id/textViewCategory"
             android:layout_width="35dp"

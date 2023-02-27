@@ -1,4 +1,4 @@
-package com.example.testshop.domain.model.flashSale
+package com.example.testshop.data.network.model.flashSale
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -6,17 +6,17 @@ import com.google.gson.annotations.SerializedName
 data class FlashSaleDto(
     @SerializedName("category")
     @Expose
-    private val category: String?,
+    val category: String?,
     @SerializedName("name")
     @Expose
-    private val name: String?,
+    val name: String?,
     @SerializedName("price")
     @Expose
-    private val price: Int?,
+    val price: Int?,
     @SerializedName("discount")
     @Expose
-    private val discount: Int?,
+    val discount: Int?,
     @SerializedName("image_url")
     @Expose
-    private val image_url: Int?
+    val image_url: String?
 )

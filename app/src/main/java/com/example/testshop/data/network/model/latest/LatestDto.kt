@@ -1,4 +1,4 @@
-package com.example.testshop.domain.model.latest
+package com.example.testshop.data.network.model.latest
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -6,14 +6,14 @@ import com.google.gson.annotations.SerializedName
 data class LatestDto(
     @SerializedName("category")
     @Expose
-    private val category: String?,
+    val category: String?,
     @SerializedName("name")
     @Expose
-    private val name: String?,
+    val name: String?,
     @SerializedName("price")
     @Expose
-    private val price: Int?,
+    val price: Int?,
     @SerializedName("image_url")
     @Expose
-    private val image_url: Int?
+    val image_url: String?
 )
