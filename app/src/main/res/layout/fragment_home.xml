@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbarSize="0dp"
     android:background="@color/background_activity"
     tools:context=".presentation.main.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_activity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -81,41 +87,29 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_find"
+            style="@style/text_input_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/background_activity">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="64dp"
+            app:endIconDrawable="@drawable/search_find"
+            app:endIconMode="custom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_find"
-                style="@style/text_input_layout"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextFind"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="64dp"
-                app:endIconDrawable="@drawable/search_find"
-                app:endIconMode="custom"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextFind"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:gravity="center"
-                    android:hint="@string/what_are_you_looking_for"
-                    android:textSize="11sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:hint="@string/what_are_you_looking_for"
+                android:textSize="11sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
@@ -298,7 +292,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/flash_sale"
                 android:textColor="@color/black"
@@ -330,9 +324,46 @@
                 app:layout_constraintTop_toBottomOf="@+id/textViewFlash"
                 tools:listitem="@layout/item_flash_sale" />
 
+            <TextView
+                android:id="@+id/textViewBrands"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Brands"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewFlashSale" />
+
+            <TextView
+                android:id="@+id/textViewAllBrands"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/view_all"
+                android:textColor="@color/text_color_signature"
+                android:textSize="9sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewBrands"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewBrands" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBrands"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="65dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewBrands"
+            tools:listitem="@layout/item_latest" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
+</ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>

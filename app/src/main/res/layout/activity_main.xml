@@ -23,7 +23,7 @@
         android:id="@+id/bottom_navigation"
         style="@style/Widget.App.BottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="63dp"
         android:background="@drawable/bottom_nav_bk"
         app:itemIconTint="#909090"
         app:labelVisibilityMode="unlabeled"

@@ -26,7 +26,7 @@ class LatestAdapter
             with(latest){
                 textViewCategory.text = category
                 textViewName.text = name
-                textViewPrice.text = "$ ${price}"
+                textViewPrice.text = "$ $price"
                 Picasso.get().load(image_url).into(imageViewUrl)
             }
         }

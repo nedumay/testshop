@@ -34,16 +34,19 @@ class ListRepositoryImpl(application: Application) : ListRepository {
     override suspend fun loadData() {
         try {
             val latest = apiService.getLatestInfo()
-            if (latest.isSuccessful) {
+            val flashSale = apiService.getFlashSaleInfo()
+            if (latest.isSuccessful && flashSale.isSuccessful) {
                 val itemsLatest = latest.body()?.latestDto
+                val itemsFlashSale = flashSale.body()?.flashSaleDto
                 withContext(Dispatchers.Main){
                     latestLD.value = itemsLatest?.map{mapper.mapDtoModelToLatest(it)}
+                    flashSaleLD.value = itemsFlashSale?.map{ mapper.mapDtoModelToFlashSale(it)}
                 }
             }
         } catch (e:Exception){
             Log.d("LoadData","ListRepositoryImpl.class : $e")
         }
-        delay(10000)
+        delay(1000)
 
         /*
         val flashSale = apiService.getFlashSaleInfo()

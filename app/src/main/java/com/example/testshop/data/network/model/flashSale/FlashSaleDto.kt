@@ -12,7 +12,7 @@ data class FlashSaleDto(
     val name: String?,
     @SerializedName("price")
     @Expose
-    val price: Int?,
+    val price: Double?,
     @SerializedName("discount")
     @Expose
     val discount: Int?,

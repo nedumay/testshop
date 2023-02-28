@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.testshop.data.repository.ListRepositoryImpl
 import com.example.testshop.databinding.FragmentHomeBinding
 import com.example.testshop.domain.usecase.LoadDataUseCase
+import com.example.testshop.presentation.main.home.adapters.flashsale.FlashSaleAdapter
 import com.example.testshop.presentation.main.home.adapters.latest.LatestAdapter
 import kotlinx.coroutines.*
 
@@ -22,6 +23,7 @@ class HomeFragment : Fragment() {
         get() = _binding ?: throw RuntimeException("FragmentHomeBinding = null")
 
     private lateinit var latestAdapter: LatestAdapter
+    private lateinit var flashSaleAdapter: FlashSaleAdapter
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,14 +35,22 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+
         binding.btnCheckPhones.isChecked = true
         checkBox()
+
         latestAdapter = LatestAdapter()
         binding.recyclerViewLatest.adapter = latestAdapter
-        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        binding.recyclerViewBrands.adapter = latestAdapter
         viewModel.latestInfoList.observe(viewLifecycleOwner){
-            Log.d("LoadData", "HomeFragment: it: $it")
             latestAdapter.submitList(it)
+        }
+        flashSaleAdapter = FlashSaleAdapter()
+        binding.recyclerViewFlashSale.adapter = flashSaleAdapter
+        viewModel.flashSaleInfoList.observe(viewLifecycleOwner){
+            flashSaleAdapter.submitList(it)
         }
     }
 
