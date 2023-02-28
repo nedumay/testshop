@@ -1,14 +1,21 @@
 package com.example.testshop.presentation.main.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.testshop.data.repository.ListRepositoryImpl
 import com.example.testshop.databinding.FragmentHomeBinding
+import com.example.testshop.domain.usecase.LoadDataUseCase
 import com.example.testshop.presentation.main.home.adapters.latest.LatestAdapter
+import kotlinx.coroutines.*
 
 class HomeFragment : Fragment() {
+
+    private lateinit var viewModel: HomeViewModel
 
     private var _binding: FragmentHomeBinding? = null
     private val binding: FragmentHomeBinding
@@ -30,7 +37,11 @@ class HomeFragment : Fragment() {
         checkBox()
         latestAdapter = LatestAdapter()
         binding.recyclerViewLatest.adapter = latestAdapter
-
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        viewModel.latestInfoList.observe(viewLifecycleOwner){
+            Log.d("LoadData", "HomeFragment: it: $it")
+            latestAdapter.submitList(it)
+        }
     }
 
     private fun checkBox() {

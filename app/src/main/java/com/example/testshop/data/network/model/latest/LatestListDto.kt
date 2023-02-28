@@ -6,5 +6,5 @@ import com.google.gson.annotations.SerializedName
 data class LatestListDto(
     @SerializedName("latest")
     @Expose
-    var latestDto: MutableList<LatestDto>
+    var latestDto: List<LatestDto>
 )

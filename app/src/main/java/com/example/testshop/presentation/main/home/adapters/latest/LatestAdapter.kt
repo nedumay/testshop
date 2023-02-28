@@ -12,18 +12,23 @@ class LatestAdapter
     : ListAdapter<Latest, LatestViewHolder>(LatestDiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LatestViewHolder {
-        val binding = ItemLatestBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemLatestBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return LatestViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: LatestViewHolder, position: Int) {
         val latest = getItem(position)
         with(holder.binding) {
-            textViewCategory.text = latest.category
-            textViewName.text = latest.name
-            textViewPrice.text = latest.price.toString()
-            Picasso.get().load(latest.image_url).into(imageViewUrl)
-
+            with(latest){
+                textViewCategory.text = category
+                textViewName.text = name
+                textViewPrice.text = "$ ${price}"
+                Picasso.get().load(image_url).into(imageViewUrl)
+            }
         }
     }
 
