@@ -1,7 +1,8 @@
 package com.example.testshop.domain.usecase
 
-import com.example.testshop.domain.ListRepository
+import com.example.testshop.domain.Repository
+import javax.inject.Inject
 
-class GetLatestListUseCase(private val repository: ListRepository) {
+class GetLatestListUseCase @Inject constructor (private val repository: Repository) {
     operator fun invoke() = repository.getLatestList()
 }

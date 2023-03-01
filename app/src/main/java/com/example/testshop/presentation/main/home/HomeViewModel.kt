@@ -1,20 +1,18 @@
 package com.example.testshop.presentation.main.home
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.testshop.data.repository.ListRepositoryImpl
 import com.example.testshop.domain.usecase.GetFlashSaleListUseCase
 import com.example.testshop.domain.usecase.GetLatestListUseCase
 import com.example.testshop.domain.usecase.LoadDataUseCase
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val repository = ListRepositoryImpl(application)
-    private val getLatestListUseCase = GetLatestListUseCase(repository)
-    private val getFlashSaleListUseCase = GetFlashSaleListUseCase(repository)
-    private val loadDataUseCase = LoadDataUseCase(repository)
+class HomeViewModel @Inject constructor(
+    private val getLatestListUseCase: GetLatestListUseCase,
+    private val getFlashSaleListUseCase: GetFlashSaleListUseCase,
+    private val loadDataUseCase: LoadDataUseCase
+) : ViewModel() {
 
     val latestInfoList = getLatestListUseCase()
     val flashSaleInfoList = getFlashSaleListUseCase()

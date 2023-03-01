@@ -4,22 +4,25 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.testshop.data.database.AppDataBase
+import com.example.testshop.data.database.UsersDao
 import com.example.testshop.data.mapper.Mapper
 import com.example.testshop.data.network.ApiFactory
-import com.example.testshop.domain.ListRepository
+import com.example.testshop.data.network.ApiService
+import com.example.testshop.domain.Repository
 import com.example.testshop.domain.model.flashSale.FlashSale
 import com.example.testshop.domain.model.latest.Latest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 
-class ListRepositoryImpl(application: Application) : ListRepository {
-
-    private val userInfoDao = AppDataBase.getInstance(application).UsersDao()
-    private val apiService = ApiFactory.apiService
-    private val mapper = Mapper()
+class RepositoryImpl @Inject constructor(
+    private val mapper: Mapper,
+    private val usersInfoDao: UsersDao,
+    private val apiService: ApiService,
+    private val application: Application
+) : Repository {
 
     private val flashSaleLD: MutableLiveData<List<FlashSale>> = MutableLiveData()
     override fun getFlashSaleList(): LiveData<List<FlashSale>> {
@@ -46,7 +49,6 @@ class ListRepositoryImpl(application: Application) : ListRepository {
         } catch (e:Exception){
             Log.d("LoadData","ListRepositoryImpl.class : $e")
         }
-        delay(1000)
     }
 }
 
