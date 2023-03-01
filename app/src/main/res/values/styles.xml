@@ -39,8 +39,8 @@
 
     <!-- Style input layout password-->
     <style name="text_input_layout_password" parent="text_input_layout">
-        <item name="endIconMode">password_toggle</item>
-        <item name="endIconTint">@color/icon_tint</item>
+        <item name="passwordToggleEnabled">true</item>
+        <item name="passwordToggleTint">@color/icon_tint</item>
     </style>
 
     <!-- Style input edit text-->
@@ -49,7 +49,8 @@
         <item name="fontFamily">@font/montserrat_medium</item>
         <item name="android:textSize">11sp</item>
         <item name="android:inputType">textCapWords</item>
-        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">fill</item>
     </style>
 
     <!-- Style input edit text password-->
@@ -100,6 +101,55 @@
 
     <style name="ThemeOverlay.App.BottomNavigationView" parent="">
         <item name="colorSecondaryContainer">#EEEFF4</item>
+    </style>
+
+    <!-- Style text title AppBar-->
+    <style name="title_app_bar">
+        <item name="android:textColor">@color/blue</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- Style text Location-->
+    <style name="location_app_bar">
+        <item name="android:textColor">@color/text_color_signature</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <!-- Style text title recyclerView-->
+    <style name="title_recycler_view">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- Style text view all-->
+    <style name="text_view_all">
+        <item name="android:textColor">@color/text_color_signature</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <!-- Style text title profile-->
+    <style name="text_title_profile">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- Style text change photo-->
+    <style name="text_change_photo">
+        <item name="android:textColor">@color/text_color_signature</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <!-- Style text name profile-->
+    <style name="text_name_profile">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">15sp</item>
     </style>
 
 </resources>

@@ -43,7 +43,7 @@ class ProfileFragment : Fragment() {
     }
     /**
      * Добавить выход из аккаунта
-     */
+     **/
     private fun logOut() {
         if(context != null){
             val intent = SignActivity.newIntent(requireContext())

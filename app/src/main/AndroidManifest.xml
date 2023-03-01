@@ -22,7 +22,8 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".presentation.sign.SignActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

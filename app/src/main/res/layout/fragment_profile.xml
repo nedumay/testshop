@@ -25,12 +25,10 @@
 
         <TextView
             android:id="@+id/textViewProfile"
+            style="@style/text_title_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold"
             android:text="@string/profile"
-            android:textColor="@color/black"
-            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageViewBackBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,11 +41,11 @@
             android:layout_marginTop="16dp"
             android:elevation="4dp"
             app:cardCornerRadius="60dp"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/icon_tint"
             app:layout_constraintEnd_toEndOf="@+id/textViewProfile"
             app:layout_constraintStart_toStartOf="@+id/textViewProfile"
-            app:layout_constraintTop_toBottomOf="@+id/textViewProfile">
+            app:layout_constraintTop_toBottomOf="@+id/textViewProfile"
+            app:strokeColor="@color/icon_tint"
+            app:strokeWidth="1dp">
 
             <ImageView
                 android:id="@+id/imageViewAvatar"
@@ -59,14 +57,12 @@
 
         <TextView
             android:id="@+id/textViewChangePhoto"
+            style="@style/text_change_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_medium"
             android:foreground="?android:attr/selectableItemBackground"
             android:padding="8dp"
             android:text="@string/change_photo"
-            android:textColor="@color/text_color_signature"
-            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="@+id/cardView"
             app:layout_constraintStart_toStartOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -75,11 +71,9 @@
             android:id="@+id/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_medium"
+            style="@style/text_name_profile"
             android:padding="8dp"
             android:text="Satria Adhi Pradana"
-            android:textColor="@color/black"
-            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="@+id/textViewChangePhoto"
             app:layout_constraintStart_toStartOf="@+id/textViewChangePhoto"
             app:layout_constraintTop_toBottomOf="@+id/textViewChangePhoto" />

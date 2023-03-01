@@ -33,6 +33,9 @@
                 android:layout_margin="16dp"
                 android:src="@drawable/nav_menu_ic"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textViewTradeBy"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,25 +43,25 @@
                 android:id="@+id/textViewTradeBy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold"
+                style="@style/title_app_bar"
                 android:text="@string/trade_by_bata"
-                android:textColor="@color/black"
-                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageViewMenu"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewAvatar"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageViewMenu"
                 app:layout_constraintTop_toTopOf="@+id/imageViewMenu" />
 
             <ImageView
                 android:id="@+id/imageViewAvatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginEnd="16dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/avatar"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewTradeBy"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textViewTradeBy"
                 app:layout_constraintTop_toTopOf="@+id/textViewTradeBy" />
 
             <TextView
@@ -66,10 +69,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins"
-                android:text="Location"
-                android:textColor="@color/text_color_signature"
-                android:textSize="10sp"
+                style="@style/location_app_bar"
+                android:text="@string/location"
                 app:layout_constraintEnd_toEndOf="@+id/imageViewAvatar"
                 app:layout_constraintStart_toStartOf="@+id/imageViewAvatar"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar" />
@@ -111,21 +112,23 @@
                 android:textSize="11sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <RadioGroup
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/til_find">
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/btnCheckPhones"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginTop="4dp"
                     android:background="@drawable/check_phones"
                     android:button="@null"
                     android:ellipsize="end"
@@ -142,10 +145,12 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/btnCheckHeadphones"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/check_headphones"
                     android:button="@null"
@@ -163,10 +168,11 @@
                     app:layout_constraintStart_toEndOf="@+id/btnCheckPhones"
                     app:layout_constraintTop_toTopOf="@+id/btnCheckPhones" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/btnCheckGames"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/check_games"
                     android:button="@null"
@@ -184,10 +190,12 @@
                     app:layout_constraintStart_toEndOf="@+id/btnCheckHeadphones"
                     app:layout_constraintTop_toTopOf="@+id/btnCheckHeadphones" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/btnCheckCars"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/check_cars"
                     android:button="@null"
@@ -205,10 +213,12 @@
                     app:layout_constraintStart_toEndOf="@+id/btnCheckGames"
                     app:layout_constraintTop_toTopOf="@+id/btnCheckGames" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/btnCheckFurniture"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/check_furniture"
                     android:button="@null"
@@ -226,10 +236,12 @@
                     app:layout_constraintStart_toEndOf="@+id/btnCheckCars"
                     app:layout_constraintTop_toTopOf="@+id/btnCheckCars" />
 
-                <CheckBox
+                <RadioButton
                     android:id="@+id/btnCheckKids"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/check_kids"
                     android:button="@null"
@@ -247,8 +259,7 @@
                     app:layout_constraintStart_toEndOf="@+id/btnCheckFurniture"
                     app:layout_constraintTop_toTopOf="@+id/btnCheckFurniture" />
 
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </RadioGroup>
 
             <TextView
                 android:id="@+id/textViewLatest"
@@ -256,10 +267,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
-                android:fontFamily="@font/poppins_medium"
+                style="@style/title_recycler_view"
                 android:text="@string/latest"
-                android:textColor="@color/black"
-                android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
@@ -268,10 +277,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_medium"
+                style="@style/text_view_all"
                 android:text="@string/view_all"
-                android:textColor="@color/text_color_signature"
-                android:textSize="9sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewLatest"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textViewLatest" />
@@ -293,10 +300,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/poppins_medium"
+                style="@style/title_recycler_view"
                 android:text="@string/flash_sale"
-                android:textColor="@color/black"
-                android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerViewLatest" />
 
@@ -305,10 +310,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_medium"
+                style="@style/text_view_all"
                 android:text="@string/view_all"
-                android:textColor="@color/text_color_signature"
-                android:textSize="9sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewFlash"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textViewFlash" />
@@ -330,10 +333,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Brands"
-                android:textColor="@color/black"
-                android:textSize="15sp"
+                style="@style/title_recycler_view"
+                android:text="@string/brands"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerViewFlashSale" />
 
@@ -342,10 +343,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_medium"
+                style="@style/text_view_all"
                 android:text="@string/view_all"
-                android:textColor="@color/text_color_signature"
-                android:textSize="9sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewBrands"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textViewBrands" />

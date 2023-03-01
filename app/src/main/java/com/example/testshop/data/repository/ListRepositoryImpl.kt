@@ -47,35 +47,6 @@ class ListRepositoryImpl(application: Application) : ListRepository {
             Log.d("LoadData","ListRepositoryImpl.class : $e")
         }
         delay(1000)
-
-        /*
-        val flashSale = apiService.getFlashSaleInfo()
-        Log.d("LoadData", "Flash: $flashSale")
-        if (latest.isSuccessful && flashSale.isSuccessful) {
-            val itemsLatest = latest.body()?.latestDto
-            //latestLD.value = itemsLatest
-            Log.d("LoadData", "$itemsLatest")
-            val itemsFlashSale = flashSale.body()?.flashSaleDto
-            //flashSaleLD.value = itemsFlashSale
-            Log.d("LoadData", "$itemsFlashSale")
-            if (itemsLatest != null && itemsFlashSale != null) {
-                for (i in 0 until itemsLatest.count()) {
-                    val category = itemsLatest[i].category
-                    val name = itemsLatest[i].name
-                    val price = itemsLatest[i].price
-                    val image = itemsLatest[i].image_url
-                    Log.d("LoadData", "")
-                }
-                for (i in 0 until itemsFlashSale.count()) {
-                    val category = itemsFlashSale[i].category
-                    val name = itemsFlashSale[i].name
-                    val price = itemsFlashSale[i].price
-                    val discount = itemsFlashSale[i].discount
-                    val image = itemsFlashSale[i].image_url
-                    Log.d("LoadData", "$category,$name,$price,$discount,$image")
-                }
-            }
-        }*/
     }
 }
 
