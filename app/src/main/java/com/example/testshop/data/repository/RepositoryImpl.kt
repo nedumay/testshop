@@ -11,6 +11,7 @@ import com.example.testshop.data.network.ApiService
 import com.example.testshop.domain.Repository
 import com.example.testshop.domain.model.flashSale.FlashSale
 import com.example.testshop.domain.model.latest.Latest
+import com.example.testshop.domain.model.users.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
@@ -21,7 +22,6 @@ class RepositoryImpl @Inject constructor(
     private val mapper: Mapper,
     private val usersInfoDao: UsersDao,
     private val apiService: ApiService,
-    private val application: Application
 ) : Repository {
 
     private val flashSaleLD: MutableLiveData<List<FlashSale>> = MutableLiveData()
@@ -33,8 +33,8 @@ class RepositoryImpl @Inject constructor(
     override fun getLatestList(): LiveData<List<Latest>>{
         return latestLD
     }
-
     override suspend fun loadData() {
+        delay(5000)
         try {
             val latest = apiService.getLatestInfo()
             val flashSale = apiService.getFlashSaleInfo()
@@ -49,6 +49,19 @@ class RepositoryImpl @Inject constructor(
         } catch (e:Exception){
             Log.d("LoadData","ListRepositoryImpl.class : $e")
         }
+    }
+
+    override suspend fun addUserToDb(user: User) {
+        usersInfoDao.insertUser(mapper.mapEntityToDbModel(user))
+    }
+
+    override suspend fun deleteUserFromDb(user: User) {
+        usersInfoDao.deleteUser(user.id)
+    }
+
+    override suspend fun getUserFromDb(firstName: String): User? {
+        val dbModel = usersInfoDao.getEmailUser(firstName)
+        return dbModel?.let { mapper.mapDbModelToEntity(it) }
     }
 }
 

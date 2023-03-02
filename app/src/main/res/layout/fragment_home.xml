@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbarSize="0dp"
     android:background="@color/background_activity"
+    android:scrollbarSize="0dp"
     tools:context=".presentation.main.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,80 +13,80 @@
         android:layout_height="wrap_content"
         android:background="@color/background_activity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/background_activity">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/imageViewMenu"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:src="@drawable/nav_menu_ic"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textViewTradeBy"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="spread_inside"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:background="@color/background_activity">
 
-            <TextView
-                android:id="@+id/textViewTradeBy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/title_app_bar"
-                android:text="@string/trade_by_bata"
-                app:layout_constraintBottom_toBottomOf="@+id/imageViewMenu"
-                app:layout_constraintEnd_toStartOf="@+id/imageViewAvatar"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/imageViewMenu"
-                app:layout_constraintTop_toTopOf="@+id/imageViewMenu" />
+                <ImageView
+                    android:id="@+id/imageViewMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/nav_menu_ic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textViewTradeBy"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageViewAvatar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/avatar"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewTradeBy"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/textViewTradeBy"
-                app:layout_constraintTop_toTopOf="@+id/textViewTradeBy" />
+                <TextView
+                    android:id="@+id/textViewTradeBy"
+                    style="@style/title_app_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trade_by_bata"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewMenu"
+                    app:layout_constraintEnd_toStartOf="@+id/imageViewAvatar"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewMenu"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewMenu" />
 
-            <TextView
-                android:id="@+id/textViewLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                style="@style/location_app_bar"
-                android:text="@string/location"
-                app:layout_constraintEnd_toEndOf="@+id/imageViewAvatar"
-                app:layout_constraintStart_toStartOf="@+id/imageViewAvatar"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar" />
+                <ImageView
+                    android:id="@+id/imageViewAvatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avatar"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewTradeBy"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textViewTradeBy"
+                    app:layout_constraintTop_toTopOf="@+id/textViewTradeBy" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:src="@drawable/down_ic"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textViewLocation"
-                app:layout_constraintTop_toTopOf="@+id/textViewLocation" />
+                <TextView
+                    android:id="@+id/textViewLocation"
+                    style="@style/location_app_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/location"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewAvatar"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewAvatar"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/down_ic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textViewLocation"
+                    app:layout_constraintTop_toTopOf="@+id/textViewLocation" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_find"
@@ -112,242 +112,242 @@
                 android:textSize="11sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-            <RadioGroup
-                android:id="@+id/constraintLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
+        <RadioGroup
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_find">
+
+            <RadioButton
+                android:id="@+id/btnCheckPhones"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/check_phones"
+                android:button="@null"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="bottom|center_horizontal"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="@string/phones"
+                android:textColor="@color/selector_text"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnCheckHeadphones"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/til_find">
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <RadioButton
-                    android:id="@+id/btnCheckPhones"
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/check_phones"
-                    android:button="@null"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/poppins"
-                    android:gravity="bottom|center_horizontal"
-                    android:maxLines="2"
-                    android:minLines="2"
-                    android:text="@string/phones"
-                    android:textColor="@color/selector_text"
-                    android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/btnCheckHeadphones"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <RadioButton
-                    android:id="@+id/btnCheckHeadphones"
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/check_headphones"
-                    android:button="@null"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/poppins"
-                    android:gravity="bottom|center_horizontal"
-                    android:maxLines="2"
-                    android:minLines="2"
-                    android:text="@string/headphones"
-                    android:textColor="@color/selector_text"
-                    android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/btnCheckPhones"
-                    app:layout_constraintEnd_toStartOf="@+id/btnCheckGames"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btnCheckPhones"
-                    app:layout_constraintTop_toTopOf="@+id/btnCheckPhones" />
-
-                <RadioButton
-                    android:id="@+id/btnCheckGames"
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/check_games"
-                    android:button="@null"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/poppins"
-                    android:gravity="bottom|center_horizontal"
-                    android:maxLines="2"
-                    android:minLines="2"
-                    android:text="@string/games"
-                    android:textColor="@color/selector_text"
-                    android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/btnCheckHeadphones"
-                    app:layout_constraintEnd_toStartOf="@+id/btnCheckCars"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btnCheckHeadphones"
-                    app:layout_constraintTop_toTopOf="@+id/btnCheckHeadphones" />
-
-                <RadioButton
-                    android:id="@+id/btnCheckCars"
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/check_cars"
-                    android:button="@null"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/poppins"
-                    android:gravity="bottom|center_horizontal"
-                    android:maxLines="2"
-                    android:minLines="2"
-                    android:text="@string/cars"
-                    android:textColor="@color/selector_text"
-                    android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/btnCheckGames"
-                    app:layout_constraintEnd_toStartOf="@+id/btnCheckFurniture"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btnCheckGames"
-                    app:layout_constraintTop_toTopOf="@+id/btnCheckGames" />
-
-                <RadioButton
-                    android:id="@+id/btnCheckFurniture"
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/check_furniture"
-                    android:button="@null"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/poppins"
-                    android:gravity="bottom|center_horizontal"
-                    android:maxLines="2"
-                    android:minLines="2"
-                    android:text="@string/furniture"
-                    android:textColor="@color/selector_text"
-                    android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/btnCheckCars"
-                    app:layout_constraintEnd_toStartOf="@+id/btnCheckKids"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btnCheckCars"
-                    app:layout_constraintTop_toTopOf="@+id/btnCheckCars" />
-
-                <RadioButton
-                    android:id="@+id/btnCheckKids"
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/check_kids"
-                    android:button="@null"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/poppins"
-                    android:gravity="bottom|center_horizontal"
-                    android:maxLines="2"
-                    android:minLines="2"
-                    android:text="@string/kids"
-                    android:textColor="@color/selector_text"
-                    android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/btnCheckFurniture"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/btnCheckFurniture"
-                    app:layout_constraintTop_toTopOf="@+id/btnCheckFurniture" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textViewLatest"
+            <RadioButton
+                android:id="@+id/btnCheckHeadphones"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                style="@style/title_recycler_view"
-                android:text="@string/latest"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/check_headphones"
+                android:button="@null"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="bottom|center_horizontal"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="@string/headphones"
+                android:textColor="@color/selector_text"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnCheckPhones"
+                app:layout_constraintEnd_toStartOf="@+id/btnCheckGames"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnCheckPhones"
+                app:layout_constraintTop_toTopOf="@+id/btnCheckPhones" />
 
-            <TextView
-                android:id="@+id/textViewAllLatest"
+            <RadioButton
+                android:id="@+id/btnCheckGames"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                style="@style/text_view_all"
-                android:text="@string/view_all"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewLatest"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/check_games"
+                android:button="@null"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="bottom|center_horizontal"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="@string/games"
+                android:textColor="@color/selector_text"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnCheckHeadphones"
+                app:layout_constraintEnd_toStartOf="@+id/btnCheckCars"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnCheckHeadphones"
+                app:layout_constraintTop_toTopOf="@+id/btnCheckHeadphones" />
+
+            <RadioButton
+                android:id="@+id/btnCheckCars"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/check_cars"
+                android:button="@null"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="bottom|center_horizontal"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="@string/cars"
+                android:textColor="@color/selector_text"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnCheckGames"
+                app:layout_constraintEnd_toStartOf="@+id/btnCheckFurniture"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnCheckGames"
+                app:layout_constraintTop_toTopOf="@+id/btnCheckGames" />
+
+            <RadioButton
+                android:id="@+id/btnCheckFurniture"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/check_furniture"
+                android:button="@null"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="bottom|center_horizontal"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="@string/furniture"
+                android:textColor="@color/selector_text"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnCheckCars"
+                app:layout_constraintEnd_toStartOf="@+id/btnCheckKids"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnCheckCars"
+                app:layout_constraintTop_toTopOf="@+id/btnCheckCars" />
+
+            <RadioButton
+                android:id="@+id/btnCheckKids"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/check_kids"
+                android:button="@null"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="bottom|center_horizontal"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="@string/kids"
+                android:textColor="@color/selector_text"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnCheckFurniture"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textViewLatest" />
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnCheckFurniture"
+                app:layout_constraintTop_toTopOf="@+id/btnCheckFurniture" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewLatest"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewLatest"
-                tools:listitem="@layout/item_latest" />
+        </RadioGroup>
 
-            <TextView
-                android:id="@+id/textViewFlash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                style="@style/title_recycler_view"
-                android:text="@string/flash_sale"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerViewLatest" />
+        <TextView
+            android:id="@+id/textViewLatest"
+            style="@style/title_recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/latest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-            <TextView
-                android:id="@+id/textViewAllFlash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                style="@style/text_view_all"
-                android:text="@string/view_all"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewFlash"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textViewFlash" />
+        <TextView
+            android:id="@+id/textViewAllLatest"
+            style="@style/text_view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/view_all"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewLatest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewLatest" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewFlashSale"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewFlash"
-                tools:listitem="@layout/item_flash_sale" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewLatest"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLatest"
+            tools:listitem="@layout/item_latest" />
 
-            <TextView
-                android:id="@+id/textViewBrands"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                style="@style/title_recycler_view"
-                android:text="@string/brands"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerViewFlashSale" />
+        <TextView
+            android:id="@+id/textViewFlash"
+            style="@style/title_recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/flash_sale"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewLatest" />
 
-            <TextView
-                android:id="@+id/textViewAllBrands"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                style="@style/text_view_all"
-                android:text="@string/view_all"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewBrands"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textViewBrands" />
+        <TextView
+            android:id="@+id/textViewAllFlash"
+            style="@style/text_view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/view_all"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewFlash"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewFlash" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewFlashSale"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFlash"
+            tools:listitem="@layout/item_flash_sale" />
+
+        <TextView
+            android:id="@+id/textViewBrands"
+            style="@style/title_recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/brands"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewFlashSale" />
+
+        <TextView
+            android:id="@+id/textViewAllBrands"
+            style="@style/text_view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/view_all"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewBrands"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewBrands" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewBrands"
@@ -362,7 +362,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewBrands"
             tools:listitem="@layout/item_latest" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
 
