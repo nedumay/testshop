@@ -1,12 +1,10 @@
 package com.example.testshop.data.repository
 
-import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.testshop.data.database.UsersDao
 import com.example.testshop.data.mapper.Mapper
-import com.example.testshop.data.network.ApiFactory
 import com.example.testshop.data.network.ApiService
 import com.example.testshop.domain.Repository
 import com.example.testshop.domain.model.flashSale.FlashSale
@@ -30,24 +28,24 @@ class RepositoryImpl @Inject constructor(
     }
 
     private val latestLD: MutableLiveData<List<Latest>> = MutableLiveData()
-    override fun getLatestList(): LiveData<List<Latest>>{
+    override fun getLatestList(): LiveData<List<Latest>> {
         return latestLD
     }
+
     override suspend fun loadData() {
-        delay(5000)
         try {
             val latest = apiService.getLatestInfo()
             val flashSale = apiService.getFlashSaleInfo()
             if (latest.isSuccessful && flashSale.isSuccessful) {
                 val itemsLatest = latest.body()?.latestDto
                 val itemsFlashSale = flashSale.body()?.flashSaleDto
-                withContext(Dispatchers.Main){
-                    latestLD.value = itemsLatest?.map{mapper.mapDtoModelToLatest(it)}
-                    flashSaleLD.value = itemsFlashSale?.map{ mapper.mapDtoModelToFlashSale(it)}
+                withContext(Dispatchers.Main) {
+                    latestLD.value = itemsLatest?.map { mapper.mapDtoModelToLatest(it) }
+                    flashSaleLD.value = itemsFlashSale?.map { mapper.mapDtoModelToFlashSale(it) }
                 }
             }
-        } catch (e:Exception){
-            Log.d("LoadData","ListRepositoryImpl.class : $e")
+        } catch (e: Exception) {
+            Log.d("LoadData", "ListRepositoryImpl.class : $e")
         }
     }
 
@@ -55,13 +53,13 @@ class RepositoryImpl @Inject constructor(
         usersInfoDao.insertUser(mapper.mapEntityToDbModel(user))
     }
 
-    override suspend fun deleteUserFromDb(user: User) {
-        usersInfoDao.deleteUser(user.id)
+    override suspend fun deleteUserFromDb(firstName: String) {
+        usersInfoDao.deleteUser(firstName)
     }
 
-    override suspend fun getUserFromDb(firstName: String): User? {
-        val dbModel = usersInfoDao.getEmailUser(firstName)
-        return dbModel?.let { mapper.mapDbModelToEntity(it) }
+    override suspend fun getUserFromDb(firstName: String): User {
+        val dbModel = usersInfoDao.getFirstNameUser(firstName)
+        return  mapper.mapDbModelToEntity(dbModel)
     }
 }
 

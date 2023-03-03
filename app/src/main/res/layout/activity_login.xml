@@ -37,7 +37,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_password"
+        android:id="@+id/til_last_name"
         style="@style/text_input_layout_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
         style="@style/style_button"
         android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/til_password"
-        app:layout_constraintStart_toStartOf="@+id/til_password" />
+        app:layout_constraintEnd_toEndOf="@+id/til_last_name"
+        app:layout_constraintStart_toStartOf="@+id/til_last_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

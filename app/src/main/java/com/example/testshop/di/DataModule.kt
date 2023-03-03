@@ -28,7 +28,7 @@ interface DataModule {
 
         @Provides
         @ApplicationScope
-        fun porovideApiService(): ApiService{
+        fun provideApiService(): ApiService{
             return ApiFactory.apiService
         }
     }

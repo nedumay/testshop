@@ -5,16 +5,16 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [UserDbModel::class], version = 1, exportSchema = false)
+@Database(entities = [UserDbModel::class], version = 11, exportSchema = false)
 abstract class AppDataBase : RoomDatabase() {
 
-    companion object{
+    companion object {
         private var db: AppDataBase? = null
-        private const val DB_NAME = "main.db"
+        private const val DB_NAME = "user.db"
         private val LOCK = Any()
 
-        fun getInstance(context: Context): AppDataBase{
-            synchronized(LOCK){
+        fun getInstance(context: Context): AppDataBase {
+            synchronized(LOCK) {
                 db?.let { return it }
                 val instance =
                     Room.databaseBuilder(
@@ -25,10 +25,11 @@ abstract class AppDataBase : RoomDatabase() {
                         .fallbackToDestructiveMigration()
                         .build()
                 db = instance
+                instance.openHelper.writableDatabase
                 return instance
             }
         }
     }
-    abstract fun UsersDao() : UsersDao
+    abstract fun UsersDao(): UsersDao
 }
 

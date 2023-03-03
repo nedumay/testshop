@@ -5,15 +5,15 @@ import androidx.room.*
 @Dao
 interface UsersDao {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.NONE)
     suspend fun insertUser(users: UserDbModel)
 
-    @Query("DELETE FROM users WHERE id=:userId")
-    suspend fun deleteUser(userId: Int)
+    @Query("DELETE FROM users WHERE fist_name=:fistName")
+    suspend fun deleteUser(fistName: String)
 
     @Query("SELECT * FROM users WHERE email LIKE :email ")
-    suspend fun getEmailUser(email: String) : UserDbModel?
+    suspend fun getEmailUser(email: String): UserDbModel?
 
     @Query("SELECT * FROM users WHERE fist_name LIKE :firstName ")
-    suspend fun getFirstNameUser(firstName: String) : UserDbModel?
+    suspend fun getFirstNameUser(firstName: String): UserDbModel?
 }

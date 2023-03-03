@@ -11,7 +11,7 @@ interface Repository {
     fun getLatestList() : LiveData<List<Latest>>
     suspend fun loadData()
     suspend fun  addUserToDb(user: User)
-    suspend fun deleteUserFromDb(user: User)
-    suspend fun getUserFromDb(firstName: String) : User?
+    suspend fun deleteUserFromDb(firstName: String)
+    suspend fun getUserFromDb(firstName: String) : User
 
 }

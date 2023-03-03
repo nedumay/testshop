@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
         createNavBottom()
+
     }
 
     private fun createNavBottom() {
@@ -29,8 +29,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object{
+        private const val EXTRA_FIRST_NAME = "firstName"
         fun newIntent(context: Context): Intent {
-            return Intent(context, MainActivity::class.java)
+            val intent = Intent(context, MainActivity::class.java)
+            return intent
         }
     }
 

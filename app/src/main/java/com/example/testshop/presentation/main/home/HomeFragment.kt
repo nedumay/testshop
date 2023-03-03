@@ -2,6 +2,7 @@ package com.example.testshop.presentation.main.home
 
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Spannable
@@ -15,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.testshop.R
 import com.example.testshop.databinding.FragmentHomeBinding
 import com.example.testshop.presentation.app.ShopApp
+import com.example.testshop.presentation.main.MainActivity
 import com.example.testshop.presentation.main.home.adapters.flashsale.FlashSaleAdapter
 import com.example.testshop.presentation.main.home.adapters.latest.LatestAdapter
 import javax.inject.Inject
@@ -76,5 +78,13 @@ class HomeFragment : Fragment() {
         binding.textViewTradeBy.setText(spans)
     }
 
+    companion object{
+        private const val EXTRA_FIRST_NAME = "firstName"
+        private const val EMPTY_SYMBOL = ""
+
+    }
+
 }
+
+
 

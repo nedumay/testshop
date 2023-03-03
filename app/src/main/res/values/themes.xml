@@ -16,6 +16,7 @@
         <item name="android:textColorPrimary">@color/black</item>
         <!-- Status navigation bar color. -->
         <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
 
     </style>
 </resources>
