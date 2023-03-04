@@ -137,7 +137,7 @@ class SignActivity : AppCompatActivity() {
         private const val EMPTY_FIELD = ""
         private const val INVALID_ADDRESS = "Invalid Email address"
         private const val INVALID_FIRST_NAME = "Аn account with the same name already exists"
-        private const val NOT_BE_EMPTY = "Must not be empty"
+        private const val NOT_BE_EMPTY = "Required Field!"
 
         fun newIntent(context: Context): Intent {
             return Intent(context, SignActivity::class.java)

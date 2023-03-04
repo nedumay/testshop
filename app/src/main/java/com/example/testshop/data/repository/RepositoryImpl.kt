@@ -11,7 +11,6 @@ import com.example.testshop.domain.model.flashSale.FlashSale
 import com.example.testshop.domain.model.latest.Latest
 import com.example.testshop.domain.model.users.User
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 

@@ -39,8 +39,8 @@
 
     <!-- Style input layout password-->
     <style name="text_input_layout_password" parent="text_input_layout">
-        <item name="passwordToggleEnabled">true</item>
-        <item name="passwordToggleTint">@color/icon_tint</item>
+        <item name="endIconMode">password_toggle</item>
+        <item name="endIconTint">@color/icon_tint</item>
     </style>
 
     <!-- Style input edit text-->
@@ -49,7 +49,6 @@
         <item name="fontFamily">@font/montserrat_medium</item>
         <item name="android:textSize">11sp</item>
         <item name="android:inputType">textCapWords</item>
-        <item name="android:singleLine">true</item>
         <item name="android:gravity">fill</item>
     </style>
 
@@ -58,9 +57,9 @@
         <item name="android:inputType">textPassword</item>
     </style>
 
-    <!-- Style input edit text password-->
+    <!-- Style input edit text email-->
     <style name="input_edit_text_email" parent="input_edit_text">
-        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:inputType">textEmailSubject</item>
     </style>
 
     <!-- Style text already_have_an_account-->
